@@ -2,10 +2,14 @@
   "use strict";
 
   $.getJSON("simple_recipes.json", function(data) {
-    processIngredients(data.recipes);
+    processRecipes(data.recipes);
   });
 
-  function processIngredients(recipes) {
+  /**
+   * Processes data from JSON file
+   * @param {Array} recipes
+   */
+  function processRecipes(recipes) {
     let ingredientsToDisplay = util.getIngredientsGroupedByType(recipes);
 
     displayIngredientsByType(ingredientsToDisplay);
@@ -32,8 +36,8 @@
   }
 
   function attachEventHandlers() {
-    $('input:checkbox').change(function() {
-      const checkedIngredients = $('input:checked').map(function(_, element) {
+    $("input:checkbox").change(function() {
+      const checkedIngredients = $("input:checked").map(function(_, element) {
         return element.id;
       }).get();
     });
