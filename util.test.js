@@ -23,7 +23,7 @@ test('remove duplicate ingredients', () => {
             ]
         }
     ]
-    ingredientsByType = util.storeIngredients(recipes);
+    ingredientsByType = util.getIngredientsGroupedByType(recipes);
     expect(ingredientsByType["pantry"]).toEqual(new Set(["peanut butter"]));
 });
 
@@ -62,7 +62,7 @@ test('ensure all ingredients are present', () => {
             ]
         }
     ]
-    ingredientsByType = util.storeIngredients(recipes);
+    ingredientsByType = util.getIngredientsGroupedByType(recipes);
     expect(ingredientsByType["pantry"]).toEqual(new Set(["peanut butter", "coffee"]));
     expect(ingredientsByType["refrigerator"]).toEqual(new Set(["soy milk", "jelly"]));
     expect(ingredientsByType["bakery"]).toEqual(new Set(["bread"]));

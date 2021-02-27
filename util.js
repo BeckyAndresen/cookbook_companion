@@ -1,21 +1,21 @@
 const util = (function(){
-  function storeIngredients(recipes) {
-    let ingredientsToDisplay = {};
+  function getIngredientsGroupedByType(recipes) {
+    let ingredientsGroupedByType = {};
     recipes.forEach(function(recipe) {
       recipe.ingredients.forEach(function(ingredient) {
-        if (ingredientsToDisplay[ingredient.type]) {
-          ingredientsToDisplay[ingredient.type].add(ingredient.name);
+        if (ingredientsGroupedByType[ingredient.type]) {
+          ingredientsGroupedByType[ingredient.type].add(ingredient.name);
         } else {
-          ingredientsToDisplay[ingredient.type] = new Set();
-          ingredientsToDisplay[ingredient.type].add(ingredient.name);
+          ingredientsGroupedByType[ingredient.type] = new Set();
+          ingredientsGroupedByType[ingredient.type].add(ingredient.name);
         }
       })
     })
-    return ingredientsToDisplay;
+    return ingredientsGroupedByType;
   }
     
   return {
-    storeIngredients
+    getIngredientsGroupedByType
   };
 }());
 

@@ -6,7 +6,7 @@
   });
 
   function processIngredients(recipes) {
-    let ingredientsToDisplay = util.storeIngredients(recipes);
+    let ingredientsToDisplay = util.getIngredientsGroupedByType(recipes);
 
     displayIngredientsByType(ingredientsToDisplay);
 
