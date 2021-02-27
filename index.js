@@ -6,7 +6,7 @@
   });
 
   /**
-   * Processes data from JSON file
+   * Processes data from a JSON file and displays recipe ingredients grouped by their type.
    * @param {Array} recipes
    */
   function processRecipes(recipes) {
