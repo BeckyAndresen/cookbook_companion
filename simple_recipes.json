@@ -1,0 +1,62 @@
+{
+    "recipes": [
+        {
+            "name": "peanut butter and jelly",
+            "cookbook": "N/A",
+            "ingredients": [
+                {
+                    "name": "peanut butter",
+                    "type": "pantry"
+                },
+                {
+                    "name":"jelly",
+                    "type": "refrigerator"
+                },
+                {
+                    "name": "bread",
+                    "type": "bakery"
+                }
+            ]
+        },
+        {
+            "name": "hummus and veggies sandwich",
+            "cookbook": "N/A",
+            "ingredients": [
+                {
+                    "name": "bread",
+                    "type": "bakery"
+                },
+                {
+                    "name": "hummus",
+                    "type": "refrigerator"
+                },
+                {
+                    "name": "cucumber",
+                    "type": "produce"
+                },
+                {
+                    "name": "tomato",
+                    "type": "produce"
+                },
+                {
+                    "name": "lettuce",
+                    "type": "produce"
+                }
+            ]
+        },
+        {
+            "name": "peanut butter sandwich",
+            "cookbook": "N/A",
+            "ingredients": [
+                {
+                    "name": "peanut butter",
+                    "type": "pantry"
+                },
+                {
+                    "name": "bread",
+                    "type": "bakery"
+                }
+            ]
+        }
+    ]
+}
