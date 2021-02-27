@@ -1,6 +1,6 @@
 const util = require('./util');
 
-test.skip('remove duplicate ingredients', () => {
+test('remove duplicate ingredients', () => {
     const recipes = [
         {
             "name": "peanut butter",
@@ -23,9 +23,47 @@ test.skip('remove duplicate ingredients', () => {
             ]
         }
     ]
-    util.storeIngredients(recipes);
+    ingredientsByType = util.storeIngredients(recipes);
+    expect(ingredientsByType["pantry"]).toEqual(new Set(["peanut butter"]));
 });
 
-test.todo('ensure all ingredients are present');
-
-test.todo('ensure ingredients are sorted by type');
+test('ensure all ingredients are present', () => {
+    const recipes = [
+        {
+            "name": "peanut butter and jelly",
+            "cookbook": "N/A",
+            "ingredients": [
+                {
+                    "name": "peanut butter",
+                    "type": "pantry"
+                },
+                {
+                    "name":"jelly",
+                    "type": "refrigerator"
+                },
+                {
+                    "name": "bread",
+                    "type": "bakery"
+                }
+            ]
+        },
+        {
+            "name": "coffee",
+            "cookbook": "N/A",
+            "ingredients": [
+                {
+                    "name": "coffee",
+                    "type": "pantry"
+                },
+                {
+                    "name":"soy milk",
+                    "type": "refrigerator"
+                }
+            ]
+        }
+    ]
+    ingredientsByType = util.storeIngredients(recipes);
+    expect(ingredientsByType["pantry"]).toEqual(new Set(["peanut butter", "coffee"]));
+    expect(ingredientsByType["refrigerator"]).toEqual(new Set(["soy milk", "jelly"]));
+    expect(ingredientsByType["bakery"]).toEqual(new Set(["bread"]));
+});
