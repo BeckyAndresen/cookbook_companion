@@ -1,0 +1,22 @@
+{
+  "name": "cookbook_companion",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BeckyAndresen/cookbook_companion.git"
+  },
+  "author": "Becky Andresen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BeckyAndresen/cookbook_companion/issues"
+  },
+  "homepage": "https://github.com/BeckyAndresen/cookbook_companion#readme",
+  "devDependencies": {
+    "eslint": "^7.20.0"
+  }
+}
