@@ -1,0 +1,15 @@
+#ingredients-grouped-by-type {
+  display: inline-block;
+  width: 25%;
+}
+
+#recipes {
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
+}
+
+body {
+  font-family: Verdana, sans-serif;
+  margin: 2em;
+}

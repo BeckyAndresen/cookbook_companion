@@ -1,4 +1,5 @@
 const util = (function() {
+  'use strict';
   /**
    * Groups ingredients by type
    * @param {Array} recipes

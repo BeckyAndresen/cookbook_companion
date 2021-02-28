@@ -1,60 +1,60 @@
 {
     "recipes": [
         {
-            "name": "peanut butter and jelly sandwich",
+            "name": "Peanut Butter and Jelly Sandwich",
             "cookbook": "N/A",
             "ingredients": [
                 {
                     "name": "peanut butter",
-                    "type": "pantry"
+                    "type": "Pantry"
                 },
                 {
                     "name": "jelly",
-                    "type": "refrigerator"
+                    "type": "Refrigerator"
                 },
                 {
                     "name": "bread",
-                    "type": "bakery"
+                    "type": "Bakery"
                 }
             ]
         },
         {
-            "name": "hummus and veggies sandwich",
+            "name": "Hummus and Veggies Sandwich",
             "cookbook": "N/A",
             "ingredients": [
                 {
                     "name": "bread",
-                    "type": "bakery"
+                    "type": "Bakery"
                 },
                 {
                     "name": "hummus",
-                    "type": "refrigerator"
+                    "type": "Refrigerator"
                 },
                 {
                     "name": "cucumber",
-                    "type": "produce"
+                    "type": "Produce"
                 },
                 {
                     "name": "tomato",
-                    "type": "produce"
+                    "type": "Produce"
                 },
                 {
                     "name": "lettuce",
-                    "type": "produce"
+                    "type": "Produce"
                 }
             ]
         },
         {
-            "name": "peanut butter sandwich",
+            "name": "Peanut Butter Sandwich",
             "cookbook": "N/A",
             "ingredients": [
                 {
                     "name": "peanut butter",
-                    "type": "pantry"
+                    "type": "Pantry"
                 },
                 {
                     "name": "bread",
-                    "type": "bakery"
+                    "type": "Bakery"
                 }
             ]
         }

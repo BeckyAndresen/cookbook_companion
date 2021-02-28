@@ -22,7 +22,7 @@
     const parent = $('#ingredients-grouped-by-type');
 
     Object.keys(ingredientsToDisplay).forEach(function(type) {
-      parent.append(`<h2 class='ingredient-type' id=${type}> ${type} </h2>`);
+      parent.append(`<h3 class='ingredient-type' id=${type}> ${type} </h3>`);
 
       ingredientsToDisplay[type].forEach(function(ingredient) {
         const ingredientCheckbox =`
