@@ -43,6 +43,16 @@
       }).get();
 
       const recipesToDisplay = util.findRecipes(recipesIndex, checkedIngredients);
+
+      displayRecipes(recipesToDisplay);
+    });
+  }
+
+  function displayRecipes(recipesToDisplay) {
+    const recipesListElement = $('#recipes ul');
+    recipesListElement.children().remove();
+    recipesToDisplay.forEach( function(recipe) {
+      recipesListElement.append(`<li> ${recipe} </li>`);
     });
   }
 })();
