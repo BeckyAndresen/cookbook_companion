@@ -1,4 +1,4 @@
-const util = (function(){
+const util = (function () {
   /**
    * Groups ingredients by type
    * @param {Array} recipes
@@ -7,8 +7,8 @@ const util = (function(){
    */
   function getIngredientsGroupedByType(recipes) {
     let ingredientsGroupedByType = {};
-    recipes.forEach(function(recipe) {
-      recipe.ingredients.forEach(function(ingredient) {
+    recipes.forEach(function (recipe) {
+      recipe.ingredients.forEach(function (ingredient) {
         if (ingredientsGroupedByType[ingredient.type]) {
           ingredientsGroupedByType[ingredient.type].add(ingredient.name);
         } else {
@@ -26,9 +26,9 @@ const util = (function(){
    */
   function buildIndex(recipes) {
     let recipeIndex = [];
-    recipes.forEach(function(recipe) {
+    recipes.forEach(function (recipe) {
       ingredients = new Set();
-      recipe.ingredients.forEach(function(ingredient) {
+      recipe.ingredients.forEach(function (ingredient) {
         ingredients.add(ingredient.name)
       })
       recipeIndex.push({ name: recipe.name, cookbook: recipe.cookbook, ingredients: ingredients })
