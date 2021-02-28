@@ -56,14 +56,66 @@ test('ensure all ingredients are present', () => {
                     "type": "pantry"
                 },
                 {
-                    "name":"soy milk",
+                    "name": "soy milk",
                     "type": "refrigerator"
                 }
             ]
         }
     ]
-    ingredientsByType = util.getIngredientsGroupedByType(recipes);
+    const ingredientsByType = util.getIngredientsGroupedByType(recipes);
     expect(ingredientsByType["pantry"]).toEqual(new Set(["peanut butter", "coffee"]));
     expect(ingredientsByType["refrigerator"]).toEqual(new Set(["soy milk", "jelly"]));
     expect(ingredientsByType["bakery"]).toEqual(new Set(["bread"]));
+});
+
+test('ensure all recipes are in index', () => {
+    const recipes = [
+        {
+            "name": "peanut butter and jelly",
+            "cookbook": "N/A",
+            "ingredients": [
+                {
+                    "name": "peanut butter",
+                    "type": "pantry"
+                },
+                {
+                    "name": "jelly",
+                    "type": "refrigerator"
+                },
+                {
+                    "name": "bread",
+                    "type": "bakery"
+                }
+            ]
+        },
+        {
+            "name": "coffee",
+            "cookbook": "N/A",
+            "ingredients": [
+                {
+                    "name": "coffee",
+                    "type": "pantry"
+                },
+                {
+                    "name": "soy milk",
+                    "type": "refrigerator"
+                }
+            ]
+        }
+    ]
+    const indexOfRecipes = util.buildIndex(recipes);
+
+    const expectedPBJ = {
+        name: "peanut butter and jelly",
+        cookbook: "N/A",
+        ingredients: new Set(["peanut butter", "jelly", "bread"])
+    }
+    expect(indexOfRecipes[0]).toEqual(expectedPBJ);
+
+    const expectedCoffee = {
+        name: "coffee",
+        cookbook: "N/A",
+        ingredients: new Set(["coffee", "soy milk"])
+    }
+    expect(indexOfRecipes[1]).toEqual(expectedCoffee);
 });

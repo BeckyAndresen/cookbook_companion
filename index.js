@@ -11,6 +11,7 @@
    */
   function processRecipes(recipes) {
     let ingredientsToDisplay = util.getIngredientsGroupedByType(recipes);
+    let recipesIndex = util.buildIndex(recipes);
 
     displayIngredientsByType(ingredientsToDisplay);
 
