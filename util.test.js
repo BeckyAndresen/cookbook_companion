@@ -122,3 +122,21 @@ describe('buildIndex', () => {
         expect(indexOfRecipes[1]).toEqual(expectedCoffee);
     });
 });
+
+describe('findRecipes', () => {
+    test('return recipe made of available ingredients', () => {
+
+        const recipes = [{
+            name: "peanut butter and jelly",
+            cookbook: "N/A",
+            ingredients: new Set(["peanut butter", "jelly", "bread"])
+        },
+        {
+            name: "coffee",
+            cookbook: "N/A",
+            ingredients: new Set(["coffee", "soy milk"])
+        }]
+
+        expect(util.findRecipes(recipes, ["coffee", "bread", "soy milk"])).toEqual(["coffee"]);
+    });
+});

@@ -15,7 +15,7 @@
 
     displayIngredientsByType(ingredientsToDisplay);
 
-    attachEventHandlers();
+    attachEventHandlers(recipesIndex);
   }
 
   function displayIngredientsByType(ingredientsToDisplay) {
@@ -36,11 +36,13 @@
     }).appendTo("body");
   }
 
-  function attachEventHandlers() {
+  function attachEventHandlers(recipesIndex) {
     $("input:checkbox").change(function () {
       const checkedIngredients = $("input:checked").map(function (_, element) {
         return element.id;
       }).get();
+
+      const recipesToDisplay = util.findRecipes(recipesIndex, checkedIngredients);
     });
   }
 })();

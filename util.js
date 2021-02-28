@@ -27,7 +27,7 @@ const util = (function () {
   function buildIndex(recipes) {
     let recipeIndex = [];
     recipes.forEach(function (recipe) {
-      ingredients = new Set();
+      let ingredients = new Set();
       recipe.ingredients.forEach(function (ingredient) {
         ingredients.add(ingredient.name)
       })
@@ -36,8 +36,40 @@ const util = (function () {
     return recipeIndex;
   }
 
+  /**
+   * @param {Array} recipesIndex
+   * @param {Array} checkedIngredients
+   * @returns {Array} List of recipes that the user can make with their available ingredients.
+   */
+  function findRecipes(recipesIndex, checkedIngredients) {
+    const checkedIngredientsSet = new Set(checkedIngredients);
+    let recipesToMake = [];
+    recipesIndex.forEach(function (recipe) {
+      if (isSuperset(checkedIngredientsSet, recipe.ingredients)) {
+        recipesToMake.push(recipe.name);
+      }
+    })
+    return recipesToMake;
+  }
+
+  /**
+   * Copied from MDN basic set operations
+   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set#implementing_basic_set_operations
+   * @param {Set} set
+   * @param {Set} subset
+   * @returns {boolean}
+   */
+  function isSuperset(set, subset) {
+    for (let elem of subset) {
+      if (!set.has(elem)) {
+        return false;
+      }
+    }
+    return true;
+  }
+
   return {
-    getIngredientsGroupedByType, buildIndex
+    getIngredientsGroupedByType, buildIndex, findRecipes
   };
 }());
 
