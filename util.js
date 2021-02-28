@@ -49,12 +49,13 @@ const util = (function() {
    */
   function findRecipes(recipesIndex, checkedIngredients) {
     const checkedIngredientsSet = new Set(checkedIngredients);
-    const recipesToMake = [];
-    recipesIndex.forEach(function(recipe) {
-      if (isSuperset(checkedIngredientsSet, recipe.ingredients)) {
-        recipesToMake.push(recipe.name);
-      }
+
+    const recipesToMake = recipesIndex.filter(function(recipe) {
+      return isSuperset(checkedIngredientsSet, recipe.ingredients);
+    }).map(function(recipe) {
+      return recipe.name;
     });
+
     return recipesToMake;
   }
 
