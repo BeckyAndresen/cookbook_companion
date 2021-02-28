@@ -32,7 +32,7 @@
   function formatIngredients(ingredient) {
     $('<div/>', {
       'class': 'ingredient-checkbox',
-      'html': '<label> <input type=\'checkbox\' id=\'' + ingredient + '\'>' + ingredient + '</label>',
+      'html': `<label> <input type='checkbox' id='${ingredient}'>${ingredient}</label>`,
     }).appendTo('body');
   }
 

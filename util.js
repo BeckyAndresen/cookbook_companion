@@ -2,7 +2,8 @@ const util = (function() {
   /**
    * Groups ingredients by type
    * @param {Array} recipes
-   * @return {Object} Ingredients grouped by their type. Object properties are the ingredient type and the associated values are the ingredients.
+   * @return {Object} Ingredients grouped by their type.
+   * Object properties are the ingredient type and the associated values are the ingredients.
    * { ingredientType: Set(['ingredient1', 'ingredient2']) }
    */
   function getIngredientsGroupedByType(recipes) {
@@ -22,7 +23,11 @@ const util = (function() {
   /**
    * @param {Array} recipes
    * @return {Array} Array of objects for each recipe.
-   * [ {name: "recipe1", cookbook: 'book - page #', ingredients: Set(['ingredient1', 'ingredient2']} ]
+   * [ {
+   *    name: "recipe1",
+   *    cookbook: 'book - page #',
+   *    ingredients: Set(['ingredient1', 'ingredient2']
+   * } ]
    */
   function buildIndex(recipes) {
     const recipeIndex = [];
@@ -52,9 +57,10 @@ const util = (function() {
     return recipesToMake;
   }
 
+  // eslint-disable-next-line max-len
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set#implementing_basic_set_operations
   /**
    * Copied from MDN basic set operations
-   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set#implementing_basic_set_operations
    * @param {Set} set
    * @param {Set} subset
    * @return {boolean}
@@ -75,6 +81,7 @@ const util = (function() {
 
 // if running in a web brower, initialize module variable
 if (typeof module == 'undefined') {
+  // eslint-disable-next-line no-var
   var module = {};
 }
 // exports module for Jest tests
