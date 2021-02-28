@@ -27,7 +27,7 @@
       ingredientsToDisplay[type].forEach(function(ingredient) {
         const ingredientCheckbox =`
           <div>
-            <label> <input type='checkbox' id='${ingredient}'>${ingredient}</label>
+            <label> <input type='checkbox' id='${ingredient}'> ${ingredient} </label>
           </div>
         `;
         parent.append(ingredientCheckbox);
