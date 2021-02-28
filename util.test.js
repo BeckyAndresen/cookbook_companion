@@ -23,7 +23,7 @@ test('remove duplicate ingredients', () => {
             ]
         }
     ]
-    ingredientsByType = util.getIngredientsGroupedByType(recipes);
+    const ingredientsByType = util.getIngredientsGroupedByType(recipes);
     expect(ingredientsByType["pantry"]).toEqual(new Set(["peanut butter"]));
 });
 
@@ -38,7 +38,7 @@ test('ensure all ingredients are present', () => {
                     "type": "pantry"
                 },
                 {
-                    "name":"jelly",
+                    "name": "jelly",
                     "type": "refrigerator"
                 },
                 {

@@ -3,8 +3,7 @@ const util = (function(){
    * Groups ingredients by type
    * @param {Array} recipes
    * @returns {Object} Ingredients grouped by their type. Object properties are the ingredient type and the associated values are the ingredients.
-   * Key: "ingredient type"
-   * Value: Set(['ingredient1', 'ingredient2'])
+   * { ingredientType: Set(['ingredient1', 'ingredient2']) }
    */
   function getIngredientsGroupedByType(recipes) {
     let ingredientsGroupedByType = {};
