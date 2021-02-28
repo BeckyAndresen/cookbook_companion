@@ -57,6 +57,24 @@
                     "type": "Bakery"
                 }
             ]
+        },
+        {
+            "name": "Salad",
+            "cookbook": "N/A",
+            "ingredients": [
+                {
+                    "name": "cucumber",
+                    "type": "Produce"
+                },
+                {
+                    "name": "tomato",
+                    "type": "Produce"
+                },
+                {
+                    "name": "lettuce",
+                    "type": "Produce"
+                }
+            ]
         }
     ]
 }
