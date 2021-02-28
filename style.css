@@ -10,6 +10,8 @@
 }
 
 body {
-  font-family: Verdana, sans-serif;
+  background-color: rgb(240, 243, 255);
+  color: rgb(45, 48, 49);
+  font-family: Helvetica, Verdana, sans-serif;
   margin: 2em;
 }
