@@ -19,21 +19,20 @@
   }
 
   function displayIngredientsByType(ingredientsToDisplay) {
-    Object.keys(ingredientsToDisplay).forEach(function(type) {
-      $('<h2/>', {
-        'class': 'ingredient-type',
-        'id': type,
-        'html': type,
-      }).appendTo('body');
-      ingredientsToDisplay[type].forEach(formatIngredients);
-    });
-  }
+    const parent = $('#ingredients-grouped-by-type');
 
-  function formatIngredients(ingredient) {
-    $('<div/>', {
-      'class': 'ingredient-checkbox',
-      'html': `<label> <input type='checkbox' id='${ingredient}'>${ingredient}</label>`,
-    }).appendTo('body');
+    Object.keys(ingredientsToDisplay).forEach(function(type) {
+      parent.append(`<h2 class='ingredient-type' id=${type}> ${type} </h2>`);
+
+      ingredientsToDisplay[type].forEach(function(ingredient) {
+        const ingredientCheckbox =`
+          <div>
+            <label> <input type='checkbox' id='${ingredient}'>${ingredient}</label>
+          </div>
+        `;
+        parent.append(ingredientCheckbox);
+      });
+    });
   }
 
   function attachEventHandlers(recipesIndex) {
