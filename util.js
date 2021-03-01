@@ -22,6 +22,7 @@ const util = (function() {
   }
 
   /**
+   * Builds an index that is used to search for recipes when a user selects ingredients.
    * @param {Array} recipes
    * @return {Array} Array of objects for each recipe.
    * [ {
@@ -43,6 +44,7 @@ const util = (function() {
   }
 
   /**
+   * Searches the recipe index for recipes that the user has all of the ingredients for.
    * @param {Array} recipesIndex
    * @param {Array} checkedIngredients
    * @return {Array} List of recipes that the user can make with their available ingredients.
