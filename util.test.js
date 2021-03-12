@@ -116,14 +116,15 @@ describe('buildIndex', () => {
       cookbook: 'N/A',
       ingredients: new Set(['peanut butter', 'jelly', 'bread']),
     };
-    expect(indexOfRecipes[0]).toEqual(expectedPBJ);
+    expect(indexOfRecipes).toContainEqual(expectedPBJ);
 
     const expectedCoffee = {
       name: 'coffee',
       cookbook: 'N/A',
       ingredients: new Set(['coffee', 'soy milk']),
     };
-    expect(indexOfRecipes[1]).toEqual(expectedCoffee);
+
+    expect(indexOfRecipes).toContainEqual(expectedCoffee);
   });
 });
 
