@@ -3,12 +3,16 @@ describe('getIngredientsGroupedByType', () => {
   test('remove duplicate ingredients', () => {
     const recipes = [
       {
-        'name': 'peanut butter',
+        'name': 'peanut butter sandwich',
         'cookbook': 'N/A',
         'ingredients': [
           {
             'name': 'peanut butter',
             'type': 'pantry',
+          },
+          {
+            'name': 'bread',
+            'type': 'bakery',
           },
         ],
       },
