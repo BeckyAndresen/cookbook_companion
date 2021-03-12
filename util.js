@@ -1,7 +1,7 @@
 const util = (function() {
   'use strict';
   /**
-   * Groups ingredients by type
+   * Groups ingredients by type for display.
    * @param {Array} recipes
    * @return {Object} Ingredients grouped by their type.
    * Object properties are the ingredient type and the associated values are the ingredients.
@@ -22,7 +22,7 @@ const util = (function() {
   }
 
   /**
-   * Builds an index that is used to search for recipes when a user selects ingredients.
+   * Builds an index of recipes to compare with user selected ingredients.
    * @param {Array} recipes
    * @return {Array} Array of objects for each recipe.
    * [ {
