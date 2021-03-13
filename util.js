@@ -32,13 +32,11 @@ const util = (function() {
    * } ]
    */
   function buildIndex(recipes) {
-    const recipeIndex = [];
-    recipes.forEach(function(recipe) {
-      const ingredients = new Set();
-      recipe.ingredients.forEach(function(ingredient) {
-        ingredients.add(ingredient.name);
+    const recipeIndex = recipes.map(function(recipe) {
+      const ingredients = recipe.ingredients.map(function(ingredient) {
+        return ingredient.name;
       });
-      recipeIndex.push({name: recipe.name, cookbook: recipe.cookbook, ingredients: ingredients});
+      return {name: recipe.name, cookbook: recipe.cookbook, ingredients: new Set(ingredients)};
     });
     return recipeIndex;
   }
