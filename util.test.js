@@ -28,7 +28,7 @@ describe('getIngredientsGroupedByType', () => {
       },
     ];
     const ingredientsByType = util.getIngredientsGroupedByType(recipes);
-    expect(ingredientsByType['pantry']).toEqual(new Set(['peanut butter']));
+    expect(ingredientsByType.get('pantry')).toEqual(new Set(['peanut butter']));
   });
 
   test('ensure all ingredients are present', () => {
@@ -67,11 +67,11 @@ describe('getIngredientsGroupedByType', () => {
       },
     ];
     const ingredientsByType = util.getIngredientsGroupedByType(recipes);
-    const expected = {
-      pantry: new Set(['peanut butter', 'coffee']),
-      refrigerator: new Set(['soy milk', 'jelly']),
-      bakery: new Set(['bread']),
-    };
+    const expected = new Map([
+      ['pantry', new Set(['peanut butter', 'coffee'])],
+      ['refrigerator', new Set(['soy milk', 'jelly'])],
+      ['bakery', new Set(['bread'])],
+    ]);
 
     expect(ingredientsByType).toEqual(expected);
   });

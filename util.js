@@ -3,18 +3,18 @@ const util = (function() {
   /**
    * Groups ingredients by type for display.
    * @param {Array} recipes
-   * @return {Object} Ingredients grouped by their type.
-   * Object properties are the ingredient type and the associated values are the ingredients.
-   * { ingredientType: Set(['ingredient1', 'ingredient2']) }
+   * @return {Map} Ingredients grouped by their type.
+   * Keys are the ingredient type and values are the ingredients.
+   * Map { 'ingredientType' => Set {'ingredient1', 'ingredient2' } }
    */
   function getIngredientsGroupedByType(recipes) {
-    const ingredientsGroupedByType = {};
+    const ingredientsGroupedByType = new Map();
     recipes.forEach(function(recipe) {
       recipe.ingredients.forEach(function(ingredient) {
-        if (ingredientsGroupedByType[ingredient.type]) {
-          ingredientsGroupedByType[ingredient.type].add(ingredient.name);
+        if (ingredientsGroupedByType.has(ingredient.type)) {
+          ingredientsGroupedByType.get(ingredient.type).add(ingredient.name);
         } else {
-          ingredientsGroupedByType[ingredient.type] = new Set([ingredient.name]);
+          ingredientsGroupedByType.set(ingredient.type, new Set([ingredient.name]));
         }
       });
     });
@@ -28,7 +28,7 @@ const util = (function() {
    * [ {
    *    name: "recipe1",
    *    cookbook: 'book - page #',
-   *    ingredients: Set(['ingredient1', 'ingredient2']
+   *    ingredients: Set { 'ingredient1', 'ingredient2' }
    * } ]
    */
   function buildIndex(recipes) {
